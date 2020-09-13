@@ -1,11 +1,16 @@
-table {
-    border-collapse: collapse;
-  }
-  
-  table, th, td {
-      padding: 10px;
-    border: 1px solid black;
-  }
-  th {
-    text-align: left;
-  }
+body {
+  background: url('purple-grapes-553463_1920.jpg') no-repeat top left;
+  background-size: cover;
+}
+
+h1 {
+    color: goldenrod;
+    background: white;
+    font-size: 2.2rem;
+    padding: 0.5em;
+    font-family: 'Playfair Display', serif;
+}
+
+.opacity {
+  background-color: rgba(255,255,255, 0.7);
+}

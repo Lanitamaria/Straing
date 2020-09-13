@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :strain_name %>
+    <%= form.text_field :name, id: :strain_name, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :available %>
-    <%= form.check_box :available, id: :strain_available %>
+    <%= form.check_box :available, id: :strain_available, class: 'form-control' %>
   </div>
 
   <div class="actions">

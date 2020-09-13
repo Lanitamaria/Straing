@@ -10,7 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200909001306) do
+ActiveRecord::Schema.define(version: 20200910231739) do
+
+  create_table "job_titles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "magazineoenologistjob_titles", force: :cascade do |t|
+    t.integer "magazine_id"
+    t.integer "oenologist_id"
+    t.integer "job_title_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_title_id"], name: "index_magazineoenologistjob_titles_on_job_title_id"
+    t.index ["magazine_id"], name: "index_magazineoenologistjob_titles_on_magazine_id"
+    t.index ["oenologist_id"], name: "index_magazineoenologistjob_titles_on_oenologist_id"
+  end
+
+  create_table "magazineoenologistjobtitles", force: :cascade do |t|
+    t.integer "magazine_id"
+    t.integer "oenologist_id"
+    t.integer "job_title_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_title_id"], name: "index_magazineoenologistjobtitles_on_job_title_id"
+    t.index ["magazine_id"], name: "index_magazineoenologistjobtitles_on_magazine_id"
+    t.index ["oenologist_id"], name: "index_magazineoenologistjobtitles_on_oenologist_id"
+  end
+
+  create_table "magazines", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "oenologists", force: :cascade do |t|
     t.string "name"
@@ -30,6 +64,19 @@ ActiveRecord::Schema.define(version: 20200909001306) do
     t.boolean "available", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "wine_strains", force: :cascade do |t|

@@ -11,19 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :wine_id %>
-    <%= form.text_field :wine_id, id: :wine_strain_wine_id %>
+    <%= form.text_field :wine_id, id: :wine_strain_wine_id , class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :strain_id %>
-    <%= form.text_field :strain_id, id: :wine_strain_strain_id %>
+    <%= form.text_field :strain_id, id: :wine_strain_strain_id , class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :percentage %>
-    <%= form.number_field :percentage, id: :wine_strain_percentage %>
+    <%= form.number_field :percentage, id: :wine_strain_percentage, class: 'form-control'  %>
   </div>
 
   <div class="actions">
